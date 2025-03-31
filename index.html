@@ -62,7 +62,7 @@
             <h2 id="stepTitle" class="text-2xl font-bold mb-6 text-blue-900">1. Bestehende Altersvorsorge prüfen</h2>
 
             <!-- Form -->
-            <form id="vorsorgeForm">
+            <form id="vorsorgeForm" onsubmit="return false;">
                 <!-- Step 1: Existing Retirement Plans -->
                 <div id="step1" class="form-step">
                     <!-- Gesetzliche Rentenversicherung -->
@@ -94,7 +94,10 @@
                                         <option value="Freiwillig versichert">Freiwillig versichert</option>
                                         <option value="Nicht versichert">Nicht versichert</option>
                                     </select>
-                                    <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
+                                    <p class="error-message text-red-500 text-xs mt-1 hidden flex items-center">
+                                        <i data-feather="alert-circle" class="mr-1" style="width: 12px; height: 12px;"></i>
+                                        <span>Bitte wählen Sie die Art der Versicherung aus</span>
+                                    </p>
                                 </div>
                                 <p class="text-sm text-gray-500 mt-1">Pflichtversichert = z.B. als Handwerker, freiwillig = eigene Einzahlung, nicht versichert = keine Beiträge</p>
                             </div>
@@ -112,7 +115,6 @@
                                 
                                 <div>
                                     <input type="number" id="rentenHöhe" name="rentenHöhe" placeholder="0" min="0" step="10" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                                    <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
                                 </div>
                                 <p class="text-sm text-gray-500 mt-1">Zu finden in Ihrer Renteninformation der DRV</p>
                             </div>
@@ -152,7 +154,10 @@
                                     </div>
                                     
                                     <input type="number" id="privateRenteVerzinsung" name="privateRenteVerzinsung" placeholder="0" min="0" step="0.1" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                                    <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
+                                    <p class="error-message text-red-500 text-xs mt-1 hidden flex items-center">
+                                        <i data-feather="alert-circle" class="mr-1" style="width: 12px; height: 12px;"></i>
+                                        <span>Bitte geben Sie einen gültigen Prozentsatz ein</span>
+                                    </p>
                                     <p class="text-sm text-gray-500 mt-1">Der in Ihrem Vertrag garantierte Zinssatz (meist zwischen 0,25% und 3,5%)</p>
                                 </div>
                             </div>
@@ -179,7 +184,10 @@
                                     </div>
                                     
                                     <input type="number" id="etfSparplanBetrag" name="etfSparplanBetrag" placeholder="0" min="0" step="10" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                                    <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
+                                    <p class="error-message text-red-500 text-xs mt-1 hidden flex items-center">
+                                        <i data-feather="alert-circle" class="mr-1" style="width: 12px; height: 12px;"></i>
+                                        <span>Bitte geben Sie einen gültigen Betrag ein</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -227,7 +235,10 @@
                                     </div>
                                     
                                     <input type="number" id="immobilienWert" name="immobilienWert" placeholder="0" min="0" step="10000" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                                    <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
+                                    <p class="error-message text-red-500 text-xs mt-1 hidden flex items-center">
+                                        <i data-feather="alert-circle" class="mr-1" style="width: 12px; height: 12px;"></i>
+                                        <span>Bitte geben Sie einen gültigen Immobilienwert ein</span>
+                                    </p>
                                 </div>
                             </div>
                         </div>
@@ -259,7 +270,10 @@
                                 </div>
                                 
                                 <input type="number" id="jährlicheEinkünfte" name="jährlicheEinkünfte" placeholder="0" min="0" step="1000" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                                <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
+                                <p class="error-message text-red-500 text-xs mt-1 hidden flex items-center">
+                                    <i data-feather="alert-circle" class="mr-1" style="width: 12px; height: 12px;"></i>
+                                    <span>Bitte geben Sie Ihre jährlichen Einkünfte an</span>
+                                </p>
                                 <p class="text-sm text-gray-500 mt-1">Brutto-Gewinn aus Selbstständigkeit oder Gehalt bei eigener GmbH</p>
                             </div>
                             
@@ -275,7 +289,10 @@
                                 </div>
                                 
                                 <input type="number" id="monatlicheRücklage" name="monatlicheRücklage" placeholder="0" min="0" step="50" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                                <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
+                                <p class="error-message text-red-500 text-xs mt-1 hidden flex items-center">
+                                    <i data-feather="alert-circle" class="mr-1" style="width: 12px; height: 12px;"></i>
+                                    <span>Bitte geben Sie Ihre monatliche Rücklage an</span>
+                                </p>
                                 <p class="text-sm text-gray-500 mt-1">Richtwert: 10–30% des Einkommens</p>
                             </div>
                         </div>
@@ -307,7 +324,10 @@
                                 </div>
                                 
                                 <input type="number" id="geschätzteRente" name="geschätzteRente" placeholder="0" min="0" step="50" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                                <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
+                                <p class="error-message text-red-500 text-xs mt-1 hidden flex items-center">
+                                    <i data-feather="alert-circle" class="mr-1" style="width: 12px; height: 12px;"></i>
+                                    <span>Bitte geben Sie Ihre geschätzte monatliche Rente an</span>
+                                </p>
                                 <p class="text-sm text-gray-500 mt-1">Nutzen Sie ggf. Online-Rechner wie den Finanztip Rentenrechner</p>
                             </div>
                             
@@ -323,7 +343,10 @@
                                 </div>
                                 
                                 <input type="number" id="gewünschtesEinkommen" name="gewünschtesEinkommen" placeholder="0" min="0" step="100" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-900 focus:border-transparent">
-                                <p class="error-message text-red-500 text-xs mt-1 hidden"></p>
+                                <p class="error-message text-red-500 text-xs mt-1 hidden flex items-center">
+                                    <i data-feather="alert-circle" class="mr-1" style="width: 12px; height: 12px;"></i>
+                                    <span>Bitte geben Sie Ihr gewünschtes Einkommen im Alter an</span>
+                                </p>
                                 <p class="text-sm text-gray-500 mt-1">Betrag, den Sie monatlich im Ruhestand zur Verfügung haben möchten</p>
                             </div>
                             
@@ -418,81 +441,89 @@
     </div>
 
     <script>
-        // Initialize Feather icons
+        // Initialize form data
+        let formData = {
+            versicherungsArt: '',
+            rentenHöhe: '',
+            privateRente: false,
+            privateRenteVerzinsung: '',
+            etfSparpläne: false,
+            etfSparplanBetrag: '',
+            wohneigentum: false,
+            vermietet: false,
+            immobilienWert: '',
+            jährlicheEinkünfte: '',
+            monatlicheRücklage: '',
+            geschätzteRente: '',
+            gewünschtesEinkommen: '',
+            rentenlücke: 0,
+            benötigtesKapital: 0
+        };
+
+        // Current step tracker
+        let currentStep = 0;
+        const totalSteps = 3;
+
+        // DOM elements
+        const mainContainer = document.getElementById('mainContainer');
+        const resultsContainer = document.getElementById('resultsContainer');
+        const nextBtn = document.getElementById('nextBtn');
+        const prevBtn = document.getElementById('prevBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progressText = document.getElementById('progressText');
+        const stepTitle = document.getElementById('stepTitle');
+        const restartBtn = document.getElementById('restartBtn');
+
+        // Initialize after DOM is fully loaded
         document.addEventListener('DOMContentLoaded', function() {
+            // Initialize Feather icons
             feather.replace();
             
-            // Global variables
-            let currentStep = 0;
-            const totalSteps = 3;
-            let formData = {
-                // Form fields initial values
-                versicherungsArt: '',
-                rentenHöhe: '',
-                privateRente: false,
-                privateRenteVerzinsung: '',
-                etfSparpläne: false,
-                etfSparplanBetrag: '',
-                wohneigentum: false,
-                vermietet: false,
-                immobilienWert: '',
-                jährlicheEinkünfte: '',
-                monatlicheRücklage: '',
-                geschätzteRente: '',
-                gewünschtesEinkommen: '',
-                rentenlücke: 0,
-                benötigtesKapital: 0
-            };
+            // Setup section toggles
+            setupSectionToggles();
             
-            // Section toggle handling
+            // Setup form input handlers
+            setupFormInputHandlers();
+            
+            // Setup navigation buttons
+            setupNavigationButtons();
+            
+            // Setup conditional fields
+            setupConditionalFields();
+            
+            // Update form display for initial state
+            updateFormDisplay();
+        });
+
+        // Setup section toggle functionality
+        function setupSectionToggles() {
             const sectionHeaders = document.querySelectorAll('.section-header');
+            
             sectionHeaders.forEach(header => {
                 header.addEventListener('click', function() {
                     const sectionName = this.getAttribute('data-section');
                     const sectionContent = document.getElementById('section-' + sectionName);
                     const icon = this.querySelector('.section-icon');
                     
+                    sectionContent.classList.toggle('hidden');
+                    
                     if (sectionContent.classList.contains('hidden')) {
-                        sectionContent.classList.remove('hidden');
-                        icon.setAttribute('data-feather', 'chevron-up');
-                    } else {
-                        sectionContent.classList.add('hidden');
                         icon.setAttribute('data-feather', 'chevron-down');
+                    } else {
+                        icon.setAttribute('data-feather', 'chevron-up');
                     }
                     
                     feather.replace();
                 });
             });
-            
-            // Conditional field visibility
-            document.getElementById('privateRente').addEventListener('change', function() {
-                const detailsDiv = document.getElementById('privateRenteDetails');
-                detailsDiv.classList.toggle('hidden', !this.checked);
-                formData.privateRente = this.checked;
-            });
-            
-            document.getElementById('etfSparpläne').addEventListener('change', function() {
-                const detailsDiv = document.getElementById('etfSparplanDetails');
-                detailsDiv.classList.toggle('hidden', !this.checked);
-                formData.etfSparpläne = this.checked;
-            });
-            
-            const immobilienCheckboxes = document.querySelectorAll('#wohneigentum, #vermietet');
-            immobilienCheckboxes.forEach(checkbox => {
-                checkbox.addEventListener('change', function() {
-                    const wohneigentum = document.getElementById('wohneigentum').checked;
-                    const vermietet = document.getElementById('vermietet').checked;
-                    const detailsDiv = document.getElementById('immobilienDetails');
-                    
-                    detailsDiv.classList.toggle('hidden', !(wohneigentum || vermietet));
-                    formData[this.id] = this.checked;
-                });
-            });
-            
-            // Input change handlers
-            const inputFields = document.querySelectorAll('input[type="text"], input[type="number"], select');
-            inputFields.forEach(input => {
-                input.addEventListener('change', function() {
+        }
+
+        // Setup form input handlers
+        function setupFormInputHandlers() {
+            // Text and number inputs
+            const textInputs = document.querySelectorAll('input[type="text"], input[type="number"]');
+            textInputs.forEach(input => {
+                input.addEventListener('input', function() {
                     if (this.type === 'number') {
                         formData[this.name] = this.value !== '' ? parseFloat(this.value) : '';
                     } else {
@@ -501,33 +532,52 @@
                     
                     // Clear error if field is valid
                     if (this.value !== '') {
-                        const errorMessage = this.parentElement.querySelector('.error-message');
-                        if (errorMessage) {
-                            errorMessage.classList.add('hidden');
-                            this.classList.remove('border-red-500');
-                        }
+                        clearError(this.name);
                     }
                 });
             });
             
-            // Form navigation
-            const nextBtn = document.getElementById('nextBtn');
-            const prevBtn = document.getElementById('prevBtn');
+            // Select inputs
+            const selectInputs = document.querySelectorAll('select');
+            selectInputs.forEach(select => {
+                select.addEventListener('change', function() {
+                    formData[this.name] = this.value;
+                    
+                    // Clear error if field is valid
+                    if (this.value !== '') {
+                        clearError(this.name);
+                    }
+                });
+            });
             
+            // Checkbox inputs
+            const checkboxInputs = document.querySelectorAll('input[type="checkbox"]');
+            checkboxInputs.forEach(checkbox => {
+                checkbox.addEventListener('change', function() {
+                    formData[this.name] = this.checked;
+                    
+                    // Handle conditional sections
+                    updateConditionalFields();
+                });
+            });
+        }
+
+        // Setup navigation buttons
+        function setupNavigationButtons() {
+            // Next button
             nextBtn.addEventListener('click', function() {
                 if (validateCurrentStep()) {
                     if (currentStep < totalSteps - 1) {
-                        // Move to next step
                         currentStep++;
                         updateFormDisplay();
                     } else {
-                        // Final step - calculate and show results
                         calculateResults();
                         showResults();
                     }
                 }
             });
             
+            // Previous button
             prevBtn.addEventListener('click', function() {
                 if (currentStep > 0) {
                     currentStep--;
@@ -536,291 +586,344 @@
             });
             
             // Restart button
-            document.getElementById('restartBtn').addEventListener('click', function() {
-                document.getElementById('resultsContainer').classList.add('hidden');
-                document.getElementById('mainContainer').classList.remove('hidden');
+            restartBtn.addEventListener('click', function() {
+                resultsContainer.classList.add('hidden');
+                mainContainer.classList.remove('hidden');
                 currentStep = 0;
                 updateFormDisplay();
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             });
+        }
+
+        // Setup conditional fields visibility
+        function setupConditionalFields() {
+            // Private Rente Details
+            document.getElementById('privateRente').addEventListener('change', updateConditionalFields);
             
-            // Update form display based on current step
-            function updateFormDisplay() {
-                // Update progress bar
-                const progressPercent = ((currentStep) / totalSteps) * 100;
-                document.getElementById('progressBar').style.width = `${progressPercent}%`;
-                document.getElementById('progressText').textContent = `${Math.round(progressPercent)}%`;
+            // ETF Sparplan Details
+            document.getElementById('etfSparpläne').addEventListener('change', updateConditionalFields);
+            
+            // Immobilien Details
+            document.getElementById('wohneigentum').addEventListener('change', updateConditionalFields);
+            document.getElementById('vermietet').addEventListener('change', updateConditionalFields);
+        }
+
+        // Update conditional fields based on checkbox states
+        function updateConditionalFields() {
+            // Private Rente Details
+            const privateRenteChecked = document.getElementById('privateRente').checked;
+            document.getElementById('privateRenteDetails').classList.toggle('hidden', !privateRenteChecked);
+            
+            // ETF Sparplan Details
+            const etfSparplanChecked = document.getElementById('etfSparpläne').checked;
+            document.getElementById('etfSparplanDetails').classList.toggle('hidden', !etfSparplanChecked);
+            
+            // Immobilien Details
+            const wohneigentumChecked = document.getElementById('wohneigentum').checked;
+            const vermietetChecked = document.getElementById('vermietet').checked;
+            document.getElementById('immobilienDetails').classList.toggle('hidden', !(wohneigentumChecked || vermietetChecked));
+        }
+
+        // Update form display based on current step
+        function updateFormDisplay() {
+            // Update progress bar
+            const progressPercent = ((currentStep) / totalSteps) * 100;
+            progressBar.style.width = `${progressPercent}%`;
+            progressText.textContent = `${Math.round(progressPercent)}%`;
+            
+            // Update step title
+            const stepTitles = [
+                "1. Bestehende Altersvorsorge prüfen",
+                "2. Einnahmen & Steuerliche Situation klären",
+                "3. Rentenlücke berechnen"
+            ];
+            stepTitle.textContent = stepTitles[currentStep];
+            
+            // Show/hide steps
+            document.querySelectorAll('.form-step').forEach((step, index) => {
+                step.classList.toggle('hidden', index !== currentStep);
+            });
+            
+            // Show/hide prev button
+            prevBtn.classList.toggle('hidden', currentStep === 0);
+            
+            // Update next button text
+            nextBtn.textContent = currentStep < totalSteps - 1 ? 'Weiter' : 'Ergebnisse anzeigen';
+            
+            // Re-render icons
+            feather.replace();
+        }
+
+        // Validate current step
+        function validateCurrentStep() {
+            let isValid = true;
+            
+            if (currentStep === 0) {
+                // Validate first step
+                if (formData.versicherungsArt === '') {
+                    showError('versicherungsArt', 'Bitte wählen Sie die Art der Versicherung aus');
+                    isValid = false;
+                }
                 
-                // Update step title
-                const stepTitles = [
-                    "1. Bestehende Altersvorsorge prüfen",
-                    "2. Einnahmen & Steuerliche Situation klären",
-                    "3. Rentenlücke berechnen"
-                ];
-                document.getElementById('stepTitle').textContent = stepTitles[currentStep];
+                if (formData.privateRente && (formData.privateRenteVerzinsung === '' || isNaN(parseFloat(formData.privateRenteVerzinsung)))) {
+                    showError('privateRenteVerzinsung', 'Bitte geben Sie einen gültigen Prozentsatz ein');
+                    isValid = false;
+                }
                 
-                // Show/hide steps
-                document.querySelectorAll('.form-step').forEach((step, index) => {
-                    step.classList.toggle('hidden', index !== currentStep);
-                });
+                if (formData.etfSparpläne && (formData.etfSparplanBetrag === '' || isNaN(parseFloat(formData.etfSparplanBetrag)))) {
+                    showError('etfSparplanBetrag', 'Bitte geben Sie einen gültigen Betrag ein');
+                    isValid = false;
+                }
                 
-                // Show/hide prev button
-                prevBtn.classList.toggle('hidden', currentStep === 0);
+                if ((formData.wohneigentum || formData.vermietet) && (formData.immobilienWert === '' || isNaN(parseFloat(formData.immobilienWert)))) {
+                    showError('immobilienWert', 'Bitte geben Sie einen gültigen Immobilienwert ein');
+                    isValid = false;
+                }
+            } else if (currentStep === 1) {
+                // Validate second step
+                if (formData.jährlicheEinkünfte === '' || isNaN(parseFloat(formData.jährlicheEinkünfte))) {
+                    showError('jährlicheEinkünfte', 'Bitte geben Sie Ihre jährlichen Einkünfte an');
+                    isValid = false;
+                }
                 
-                // Update next button text
-                nextBtn.textContent = currentStep < totalSteps - 1 ? 'Weiter' : 'Ergebnisse anzeigen';
+                if (formData.monatlicheRücklage === '' || isNaN(parseFloat(formData.monatlicheRücklage))) {
+                    showError('monatlicheRücklage', 'Bitte geben Sie Ihre monatliche Rücklage an');
+                    isValid = false;
+                }
+            } else if (currentStep === 2) {
+                // Validate third step
+                if (formData.geschätzteRente === '' || isNaN(parseFloat(formData.geschätzteRente))) {
+                    showError('geschätzteRente', 'Bitte geben Sie Ihre geschätzte monatliche Rente an');
+                    isValid = false;
+                }
                 
-                // Re-render icons
-                feather.replace();
+                if (formData.gewünschtesEinkommen === '' || isNaN(parseFloat(formData.gewünschtesEinkommen))) {
+                    showError('gewünschtesEinkommen', 'Bitte geben Sie Ihr gewünschtes Einkommen im Alter an');
+                    isValid = false;
+                }
             }
             
-            // Validate current step
-            function validateCurrentStep() {
-                let isValid = true;
-                
-                if (currentStep === 0) {
-                    // Validate first step
-                    if (formData.versicherungsArt === '') {
-                        showError('versicherungsArt', 'Bitte wählen Sie die Art der Versicherung aus');
-                        isValid = false;
-                    }
-                    
-                    if (formData.privateRente && (formData.privateRenteVerzinsung === '' || isNaN(parseFloat(formData.privateRenteVerzinsung)))) {
-                        showError('privateRenteVerzinsung', 'Bitte geben Sie einen gültigen Prozentsatz ein');
-                        isValid = false;
-                    }
-                    
-                    if (formData.etfSparpläne && (formData.etfSparplanBetrag === '' || isNaN(parseFloat(formData.etfSparplanBetrag)))) {
-                        showError('etfSparplanBetrag', 'Bitte geben Sie einen gültigen Betrag ein');
-                        isValid = false;
-                    }
-                    
-                    if ((formData.wohneigentum || formData.vermietet) && (formData.immobilienWert === '' || isNaN(parseFloat(formData.immobilienWert)))) {
-                        showError('immobilienWert', 'Bitte geben Sie einen gültigen Immobilienwert ein');
-                        isValid = false;
-                    }
-                } else if (currentStep === 1) {
-                    // Validate second step
-                    if (formData.jährlicheEinkünfte === '' || isNaN(parseFloat(formData.jährlicheEinkünfte))) {
-                        showError('jährlicheEinkünfte', 'Bitte geben Sie Ihre jährlichen Einkünfte an');
-                        isValid = false;
-                    }
-                    
-                    if (formData.monatlicheRücklage === '' || isNaN(parseFloat(formData.monatlicheRücklage))) {
-                        showError('monatlicheRücklage', 'Bitte geben Sie Ihre monatliche Rücklage an');
-                        isValid = false;
-                    }
-                } else if (currentStep === 2) {
-                    // Validate third step
-                    if (formData.geschätzteRente === '' || isNaN(parseFloat(formData.geschätzteRente))) {
-                        showError('geschätzteRente', 'Bitte geben Sie Ihre geschätzte monatliche Rente an');
-                        isValid = false;
-                    }
-                    
-                    if (formData.gewünschtesEinkommen === '' || isNaN(parseFloat(formData.gewünschtesEinkommen))) {
-                        showError('gewünschtesEinkommen', 'Bitte geben Sie Ihr gewünschtes Einkommen im Alter an');
-                        isValid = false;
-                    }
+            return isValid;
+        }
+
+        // Show error for a field
+        function showError(fieldId, message) {
+            const field = document.getElementById(fieldId);
+            if (!field) return;
+            
+            field.classList.add('border-red-500');
+            
+            // Find the error message element
+            const errorContainer = field.parentElement.querySelector('.error-message');
+            if (errorContainer) {
+                const messageSpan = errorContainer.querySelector('span');
+                if (messageSpan) {
+                    messageSpan.textContent = message;
                 }
-                
-                return isValid;
+                errorContainer.classList.remove('hidden');
             }
             
-            // Show error for a field
-            function showError(fieldId, errorMessage) {
-                const field = document.getElementById(fieldId);
-                const errorElement = field.parentElement.querySelector('.error-message');
-                
-                field.classList.add('border-red-500');
-                if (errorElement) {
-                    errorElement.textContent = errorMessage;
-                    errorElement.classList.remove('hidden');
-                }
-                
-                // Scroll to the first error
-                if (field) {
-                    field.scrollIntoView({ behavior: 'smooth', block: 'center' });
-                }
+            // Scroll to the error field
+            field.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            
+            // Make sure feather icons are replaced
+            feather.replace();
+        }
+
+        // Clear error for a field
+        function clearError(fieldId) {
+            const field = document.getElementById(fieldId);
+            if (!field) return;
+            
+            field.classList.remove('border-red-500');
+            
+            // Find and hide the error message
+            const errorContainer = field.parentElement.querySelector('.error-message');
+            if (errorContainer) {
+                errorContainer.classList.add('hidden');
+            }
+        }
+
+        // Calculate results
+        function calculateResults() {
+            const monatlicheRente = parseFloat(formData.geschätzteRente) || 0;
+            const gewünschtesEinkommen = parseFloat(formData.gewünschtesEinkommen) || 0;
+            
+            const rentenlücke = Math.max(0, gewünschtesEinkommen - monatlicheRente);
+            const benötigtesKapital = rentenlücke * 12 * 25; // Yearly need x 25
+            
+            formData.rentenlücke = rentenlücke;
+            formData.benötigtesKapital = benötigtesKapital;
+        }
+
+        // Calculate vorsorge score
+        function calculateVorsorgeScore() {
+            let score = 0;
+            
+            // Gesetzliche Rente
+            if (formData.versicherungsArt) score += 20;
+            
+            // Private Vorsorge
+            if (formData.privateRente || formData.etfSparpläne) score += 20;
+            
+            // Immobilien
+            if (formData.wohneigentum || formData.vermietet) score += 15;
+            
+            // Sparquote
+            const sparquote = getPercentage(formData.monatlicheRücklage, formData.jährlicheEinkünfte);
+            if (sparquote >= 20) score += 20;
+            else if (sparquote >= 10) score += 15;
+            else if (sparquote >= 5) score += 5;
+            
+            return score;
+        }
+
+        // Calculate percentage
+        function getPercentage(monthly, yearly) {
+            if (!monthly || !yearly) return 0;
+            const monthlyValue = parseFloat(monthly);
+            const yearlyValue = parseFloat(yearly);
+            if (isNaN(monthlyValue) || isNaN(yearlyValue) || yearlyValue === 0) return 0;
+            
+            return Math.round((monthlyValue * 12 / yearlyValue) * 100);
+        }
+
+        // Format number with thousand separators
+        function formatNumber(number) {
+            return number.toLocaleString('de-DE');
+        }
+
+        // Show results
+        function showResults() {
+            // Hide form, show results
+            mainContainer.classList.add('hidden');
+            resultsContainer.classList.remove('hidden');
+            
+            // Update situation list
+            const situationList = document.getElementById('situationList');
+            situationList.innerHTML = '';
+            
+            if (formData.versicherungsArt) {
+                addListItem(situationList, 'Rentenversicherung: ' + formData.versicherungsArt);
             }
             
-            // Calculate results
-            function calculateResults() {
-                const monatlicheRente = parseFloat(formData.geschätzteRente) || 0;
-                const gewünschtesEinkommen = parseFloat(formData.gewünschtesEinkommen) || 0;
-                
-                const rentenlücke = Math.max(0, gewünschtesEinkommen - monatlicheRente);
-                const benötigtesKapital = rentenlücke * 12 * 25; // Yearly need x 25
-                
-                formData.rentenlücke = rentenlücke;
-                formData.benötigtesKapital = benötigtesKapital;
+            if (formData.rentenHöhe) {
+                addListItem(situationList, 'Erworbene Rente: ' + formatNumber(parseFloat(formData.rentenHöhe)) + ' €/Monat');
             }
             
-            // Calculate vorsorge score
-            function calculateVorsorgeScore() {
-                let score = 0;
-                
-                // Gesetzliche Rente
-                if (formData.versicherungsArt) score += 20;
-                
-                // Private Vorsorge
-                if (formData.privateRente || formData.etfSparpläne) score += 20;
-                
-                // Immobilien
-                if (formData.wohneigentum || formData.vermietet) score += 15;
-                
-                // Sparquote
-                const sparquote = getPercentage(formData.monatlicheRücklage, formData.jährlicheEinkünfte);
-                if (sparquote >= 20) score += 20;
-                else if (sparquote >= 10) score += 15;
-                else if (sparquote >= 5) score += 5;
-                
-                return score;
+            if (formData.privateRente) {
+                addListItem(situationList, 'Private Rentenversicherung');
             }
             
-            // Calculate percentage
-            function getPercentage(monthly, yearly) {
-                if (!monthly || !yearly) return 0;
-                const monthlyValue = parseFloat(monthly);
-                const yearlyValue = parseFloat(yearly);
-                if (isNaN(monthlyValue) || isNaN(yearlyValue) || yearlyValue === 0) return 0;
-                
-                return Math.round((monthlyValue * 12 / yearlyValue) * 100);
+            if (formData.etfSparpläne && formData.etfSparplanBetrag) {
+                addListItem(situationList, 'ETF-/Fondssparpläne: ' + formatNumber(parseFloat(formData.etfSparplanBetrag)) + ' €/Monat');
             }
             
-            // Format number with thousand separators
-            function formatNumber(number) {
-                return number.toLocaleString('de-DE');
+            if ((formData.wohneigentum || formData.vermietet) && formData.immobilienWert) {
+                addListItem(situationList, 'Immobilienvermögen: ' + formatNumber(parseFloat(formData.immobilienWert)) + ' €');
             }
             
-            // Show results
-            function showResults() {
-                document.getElementById('mainContainer').classList.add('hidden');
-                document.getElementById('resultsContainer').classList.remove('hidden');
-                
-                // Update situation list
-                const situationList = document.getElementById('situationList');
-                situationList.innerHTML = '';
-                
-                if (formData.versicherungsArt) {
-                    addListItem(situationList, 'Rentenversicherung: ' + formData.versicherungsArt);
-                }
-                
-                if (formData.rentenHöhe) {
-                    addListItem(situationList, 'Erworbene Rente: ' + formatNumber(parseFloat(formData.rentenHöhe)) + ' €/Monat');
-                }
-                
-                if (formData.privateRente) {
-                    addListItem(situationList, 'Private Rentenversicherung');
-                }
-                
-                if (formData.etfSparpläne && formData.etfSparplanBetrag) {
-                    addListItem(situationList, 'ETF-/Fondssparpläne: ' + formatNumber(parseFloat(formData.etfSparplanBetrag)) + ' €/Monat');
-                }
-                
-                if ((formData.wohneigentum || formData.vermietet) && formData.immobilienWert) {
-                    addListItem(situationList, 'Immobilienvermögen: ' + formatNumber(parseFloat(formData.immobilienWert)) + ' €');
-                }
-                
-                // Update retirement gap
-                document.querySelector('#geschätzteRenteResult .value').textContent = formatNumber(parseFloat(formData.geschätzteRente));
-                document.querySelector('#gewünschtesEinkommenResult .value').textContent = formatNumber(parseFloat(formData.gewünschtesEinkommen));
-                document.querySelector('#rentenlückeResult .value').textContent = formatNumber(formData.rentenlücke);
-                document.querySelector('#benötigtesKapitalResult .value').textContent = formatNumber(formData.benötigtesKapital);
-                
-                // Update vorsorge score
-                const score = calculateVorsorgeScore();
-                document.getElementById('vorsorgeScoreBar').style.width = `${Math.min(score, 100)}%`;
-                document.getElementById('vorsorgeScoreText').textContent = `${score}%`;
-                
-                // Update vorsorge elements
-                const vorsorgeContainer = document.getElementById('vorsorgeElementContainer');
-                vorsorgeContainer.innerHTML = '';
-                
-                // Add vorsorge elements
-                addVorsorgeElement(vorsorgeContainer, 'Gesetzliche Rente', 
-                    formData.versicherungsArt ? 'Vorhanden' : 'Prüfen',
-                    formData.versicherungsArt ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
-                );
-                
-                addVorsorgeElement(vorsorgeContainer, 'Private Vorsorge', 
-                    (formData.privateRente || formData.etfSparpläne) ? 'Vorhanden' : 'Empfohlen',
-                    (formData.privateRente || formData.etfSparpläne) ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
-                );
-                
-                addVorsorgeElement(vorsorgeContainer, 'Immobilienvermögen', 
-                    (formData.wohneigentum || formData.vermietet) ? 'Vorhanden' : 'Optional',
-                    (formData.wohneigentum || formData.vermietet) ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
-                );
-                
-                // Add recommendations
-                const recommendationsList = document.getElementById('recommendationsList');
-                recommendationsList.innerHTML = '';
-                
-                if (!formData.versicherungsArt) {
-                    addRecommendation(recommendationsList, 'Prüfen Sie Ihren Status bei der Deutschen Rentenversicherung und fordern Sie eine Renteninformation an.');
-                }
-                
-                if (formData.versicherungsArt === 'Nicht versichert') {
-                    addRecommendation(recommendationsList, 'Erwägen Sie eine freiwillige Einzahlung in die gesetzliche Rentenversicherung, um Basisschutz zu erhalten.');
-                }
-                
-                if (!formData.privateRente && !formData.etfSparpläne) {
-                    addRecommendation(recommendationsList, 'Bauen Sie eine private Altersvorsorge auf, z.B. mit ETF-Sparplänen oder einer Basisrente (Rürup).');
-                }
-                
-                const sparquote = getPercentage(formData.monatlicheRücklage, formData.jährlicheEinkünfte);
-                if (sparquote < 10 && formData.monatlicheRücklage && formData.jährlicheEinkünfte) {
-                    addRecommendation(recommendationsList, 'Erhöhen Sie Ihre Sparquote auf mindestens 10-15% Ihres Einkommens für eine ausreichende Altersvorsorge.');
-                }
-                
-                if (formData.rentenlücke > 500) {
-                    addRecommendation(recommendationsList, 'Ihre Rentenlücke ist erheblich. Erwägen Sie, Ihre Vorsorgestrategie mit einem Finanzberater zu optimieren.');
-                }
-                
-                addRecommendation(recommendationsList, 'Überprüfen Sie Ihre Altersvorsorgestrategie mindestens einmal jährlich und passen Sie sie an veränderte Lebensumstände an.');
-                
-                // Re-render icons
-                feather.replace();
-                
-                // Scroll to top of results
-                window.scrollTo({ top: 0, behavior: 'smooth' });
+            // Update retirement gap
+            document.querySelector('#geschätzteRenteResult .value').textContent = formatNumber(parseFloat(formData.geschätzteRente));
+            document.querySelector('#gewünschtesEinkommenResult .value').textContent = formatNumber(parseFloat(formData.gewünschtesEinkommen));
+            document.querySelector('#rentenlückeResult .value').textContent = formatNumber(formData.rentenlücke);
+            document.querySelector('#benötigtesKapitalResult .value').textContent = formatNumber(formData.benötigtesKapital);
+            
+            // Update vorsorge score
+            const score = calculateVorsorgeScore();
+            document.getElementById('vorsorgeScoreBar').style.width = `${Math.min(score, 100)}%`;
+            document.getElementById('vorsorgeScoreText').textContent = `${score}%`;
+            
+            // Update vorsorge elements
+            const vorsorgeContainer = document.getElementById('vorsorgeElementContainer');
+            vorsorgeContainer.innerHTML = '';
+            
+            // Add vorsorge elements
+            addVorsorgeElement(vorsorgeContainer, 'Gesetzliche Rente', 
+                formData.versicherungsArt ? 'Vorhanden' : 'Prüfen',
+                formData.versicherungsArt ? 'bg-green-100 text-green-800' : 'bg-yellow-100 text-yellow-800'
+            );
+            
+            addVorsorgeElement(vorsorgeContainer, 'Private Vorsorge', 
+                (formData.privateRente || formData.etfSparpläne) ? 'Vorhanden' : 'Empfohlen',
+                (formData.privateRente || formData.etfSparpläne) ? 'bg-green-100 text-green-800' : 'bg-red-100 text-red-800'
+            );
+            
+            addVorsorgeElement(vorsorgeContainer, 'Immobilienvermögen', 
+                (formData.wohneigentum || formData.vermietet) ? 'Vorhanden' : 'Optional',
+                (formData.wohneigentum || formData.vermietet) ? 'bg-green-100 text-green-800' : 'bg-gray-100 text-gray-800'
+            );
+            
+            // Add recommendations
+            const recommendationsList = document.getElementById('recommendationsList');
+            recommendationsList.innerHTML = '';
+            
+            if (!formData.versicherungsArt) {
+                addRecommendation(recommendationsList, 'Prüfen Sie Ihren Status bei der Deutschen Rentenversicherung und fordern Sie eine Renteninformation an.');
             }
             
-            // Helper function to add list item with check icon
-            function addListItem(container, text) {
-                const li = document.createElement('li');
-                li.className = 'flex items-start';
-                li.innerHTML = `
-                    <i data-feather="check-circle" class="text-green-500 mr-2 mt-1 flex-shrink-0" style="width: 16px; height: 16px;"></i>
-                    <span>${text}</span>
-                `;
-                container.appendChild(li);
+            if (formData.versicherungsArt === 'Nicht versichert') {
+                addRecommendation(recommendationsList, 'Erwägen Sie eine freiwillige Einzahlung in die gesetzliche Rentenversicherung, um Basisschutz zu erhalten.');
             }
             
-            // Helper function to add vorsorge element
-            function addVorsorgeElement(container, title, status, statusClass) {
-                const div = document.createElement('div');
-                div.className = 'border rounded-lg p-4';
-                div.innerHTML = `
-                    <h4 class="font-medium text-blue-900 mb-2">${title}</h4>
-                    <span class="px-2 py-1 rounded-full text-xs font-medium ${statusClass}">
-                        ${status}
-                    </span>
-                `;
-                container.appendChild(div);
+            if (!formData.privateRente && !formData.etfSparpläne) {
+                addRecommendation(recommendationsList, 'Bauen Sie eine private Altersvorsorge auf, z.B. mit ETF-Sparplänen oder einer Basisrente (Rürup).');
             }
             
-            // Helper function to add recommendation
-            function addRecommendation(container, text) {
-                const li = document.createElement('li');
-                li.className = 'flex items-start';
-                li.innerHTML = `
-                    <i data-feather="arrow-right" class="text-orange-600 mr-2 mt-1 flex-shrink-0" style="width: 16px; height: 16px;"></i>
-                    <span>${text}</span>
-                `;
-                container.appendChild(li);
+            const sparquote = getPercentage(formData.monatlicheRücklage, formData.jährlicheEinkünfte);
+            if (sparquote < 10 && formData.monatlicheRücklage && formData.jährlicheEinkünfte) {
+                addRecommendation(recommendationsList, 'Erhöhen Sie Ihre Sparquote auf mindestens 10-15% Ihres Einkommens für eine ausreichende Altersvorsorge.');
             }
-        });
+            
+            if (formData.rentenlücke > 500) {
+                addRecommendation(recommendationsList, 'Ihre Rentenlücke ist erheblich. Erwägen Sie, Ihre Vorsorgestrategie mit einem Finanzberater zu optimieren.');
+            }
+            
+            addRecommendation(recommendationsList, 'Überprüfen Sie Ihre Altersvorsorgestrategie mindestens einmal jährlich und passen Sie sie an veränderte Lebensumstände an.');
+            
+            // Re-render icons
+            feather.replace();
+            
+            // Scroll to top of results
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Helper function to add list item with check icon
+        function addListItem(container, text) {
+            const li = document.createElement('li');
+            li.className = 'flex items-start';
+            li.innerHTML = `
+                <i data-feather="check-circle" class="text-green-500 mr-2 mt-1 flex-shrink-0" style="width: 16px; height: 16px;"></i>
+                <span>${text}</span>
+            `;
+            container.appendChild(li);
+            feather.replace();
+        }
+
+        // Helper function to add vorsorge element
+        function addVorsorgeElement(container, title, status, statusClass) {
+            const div = document.createElement('div');
+            div.className = 'border rounded-lg p-4';
+            div.innerHTML = `
+                <h4 class="font-medium text-blue-900 mb-2">${title}</h4>
+                <span class="px-2 py-1 rounded-full text-xs font-medium ${statusClass}">
+                    ${status}
+                </span>
+            `;
+            container.appendChild(div);
+        }
+
+        // Helper function to add recommendation
+        function addRecommendation(container, text) {
+            const li = document.createElement('li');
+            li.className = 'flex items-start';
+            li.innerHTML = `
+                <i data-feather="arrow-right" class="text-orange-600 mr-2 mt-1 flex-shrink-0" style="width: 16px; height: 16px;"></i>
+                <span>${text}</span>
+            `;
+            container.appendChild(li);
+            feather.replace();
+        }
     </script>
 </body>
 </html>
